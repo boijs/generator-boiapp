@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title><%= title %></title>
+        <link rel="stylesheet" href="/style/main.<%= appname %>.css">
+    </head>
+    <body>
+        <%= title %>
+        <% for (var i=0,len=libs.length;i<len;i++) { %>
+            <script src="<%= libs[i] %>" charset="utf-8"></script>
+        <% } %>
+        <script src="/js/main.<%= appname %>.js" charset="utf-8"></script>
+    </body>
+</html>
