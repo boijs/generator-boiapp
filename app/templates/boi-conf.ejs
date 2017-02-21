@@ -1,0 +1,48 @@
+boi.spec('basic', {
+  appName: '<%= appname %>',
+  // 本地编译目录
+  localPath: {
+    src: './src/',
+    dest: './dest/'
+  }
+});
+
+// 同名配置覆盖父级
+boi.spec('js', {
+  extType: 'js',
+  srcType: ['es2015'],
+  srcDir: 'js',
+  destDir: 'js',
+  useHash: true,
+  uglify: false,
+  lint: <%= jsLint %>,
+  mutiEntriesVendor: true
+});
+
+boi.spec('style', {
+  extType: '<%= styleSyntax %>',
+  srcDir: 'style',
+  destDir: 'style',
+  useHash: true,
+  lint: false,
+  sprites: <%= enableSprites %>,
+  <% if(enableSprites){ %>
+  spritesConfig: {
+    dir: 'assets/icons',
+    split: true,
+    retina: true
+  }
+  <% } %>
+});
+
+boi.spec('html', {
+  extType: '<%= htmlEngine %>',
+  buildToHtml: true,
+  srcDir: '/',
+  lint: false
+});
+
+boi.spec('image', {
+  extType: ['png', 'jpg'],
+  destDir: 'image'
+});

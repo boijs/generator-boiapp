@@ -1,0 +1,30 @@
+body{
+  margin: 0;
+}
+.<%= appname %>__nav__list{
+  height: 50px;
+  line-height: 50px;
+  border-bottom: solid #ddd 1px;
+  box-sizing: border-box;
+  padding: 0 10px;
+  margin: 0;
+}
+.<%= appname %>__nav__item{
+  display: inline-block;
+  font-size: 14px;
+}
+<% if(enableSprites){ %>
+  .<%= appname %>__icon{
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .<%= appname %>__icon__home{
+    background: url(../assets/icons/icon-home.png) no-repeat;
+  }
+  .<%= appname %>__icon__docs{
+    background: url(../assets/icons/icon-docs.png) no-repeat;
+  }
+  .<%= appname %>__icon__about{
+    background: url(../assets/icons/icon-about.png) no-repeat;
+  }
+<% } %>

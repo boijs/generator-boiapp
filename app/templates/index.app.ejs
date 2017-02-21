@@ -3,13 +3,38 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <title><%= title %></title>
+        <title><%= appname %></title>
+        <% for (var i=0,len=styleLibs.length;i<len;i++) { %>
+            <link rel="stylesheet" href="<%= styleLibs[i] %>"></link>
+        <% } %>
         <link rel="stylesheet" href="/style/main.<%= appname %>.css">
     </head>
     <body>
-        <%= title %>
-        <% for (var i=0,len=libs.length;i<len;i++) { %>
-            <script src="<%= libs[i] %>" charset="utf-8"></script>
+        <div class="<%= appname %>__nav">
+          <ul class='<%= appname %>__nav__list'>
+            <li class='<%= appname %>__nav__item'>
+              <% if(enableSprites){ %>
+                <i class="<%= appname %>__icon <%= appname %>__icon__home"></i>
+              <% } %>
+              <span class="item__label">首页</span>
+            </li>
+            <li class='<%= appname %>__nav__item'>
+              <% if(enableSprites){ %>
+                <i class="<%= appname %>__icon <%= appname %>__icon__docs"></i>
+              <% } %>
+              <span class="item__label">文档</span>
+            </li>
+            <li class='<%= appname %>__nav__item'>
+              <% if(enableSprites){ %>
+                <i class="<%= appname %>__icon <%= appname %>__icon__about"></i>
+              <% } %>
+              <span class="item__label">关于</span>
+            </li>
+          </ul>
+        </div>
+        <%= appname %> built by <a href="https://boijs.github.io/" target="_blank">boi</a>
+        <% for (var i=0,len=jsLibs.length;i<len;i++) { %>
+            <script src="<%= jsLibs[i] %>" charset="utf-8"></script>
         <% } %>
         <script src="/js/main.<%= appname %>.js" charset="utf-8"></script>
     </body>

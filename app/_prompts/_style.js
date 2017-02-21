@@ -33,15 +33,4 @@ module.exports = [{
   name: 'enableSprites',
   message: 'Enable CSS Sprites?',
   default: true
-},{
-  type: 'input',
-  name: 'dirOfSprites',
-  message: 'Input sprites icon\'s dirname:',
-  default: 'icons',
-  when:(answers)=>{
-    return answers.enableSprites;
-  },
-  validate: (input)=>{
-    return !/\s+/.test(input.trim());
-  }
 }];
