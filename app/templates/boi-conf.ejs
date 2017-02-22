@@ -1,4 +1,5 @@
 boi.spec('basic', {
+  // 项目名称
   appName: '<%= appname %>',
   // 本地编译目录
   localPath: {
@@ -9,40 +10,57 @@ boi.spec('basic', {
 
 // 同名配置覆盖父级
 boi.spec('js', {
+  // JavaScript文件后缀类型
   extType: 'js',
   srcType: ['es2015'],
+  // JavaScript文件目录，相对于basic.localPath.src
   srcDir: 'js',
+  // JavaScript文件输出目录，相对于basic.localPath.dest
   destDir: 'js',
+  // 是否启用文件hash指纹
   useHash: true,
+  // 是否压缩混淆
   uglify: false,
+  // 是否开启代码规范测试
   lint: <%= jsLint %>,
+  // 存在多个main文件时是否将公共模块提取出来
   mutiEntriesVendor: true
 });
 
 boi.spec('style', {
+  // Style文件后缀类型
   extType: '<%= styleSyntax %>',
+  // Style文件目录，相对于basic.localPath.src
   srcDir: 'style',
+  // Style文件输出目录，相对于basic.localPath.dest
   destDir: 'style',
   useHash: true,
   lint: false,
+  // 是否启用CSS Sprites自动生成功能
   sprites: <%= enableSprites %>,
+  // CSS Sprites功能配置项，必须sprites设为true才会生效
   <% if(enableSprites){ %>
   spritesConfig: {
+    // 散列图标目录
     dir: 'assets/icons',
     split: true,
+    // 是否生成多分辨率文件
     retina: true
   }
   <% } %>
 });
 
 boi.spec('html', {
+  // HTML文件后缀类型
   extType: '<%= htmlEngine %>',
+  // 如果采用模板引擎，此配置项为true时将模板语法编译为HTML语法，false时保留原语法
   buildToHtml: true,
-  srcDir: '/',
+  // Html文件目录，相对于basic.localPath.src
+  srcDir: './',
   lint: false
 });
 
 boi.spec('image', {
-  extType: ['png', 'jpg'],
+  extType: ['png', 'jpg', 'gif'],
   destDir: 'image'
 });
