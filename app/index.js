@@ -122,6 +122,11 @@ module.exports = class extends Generators {
         this.templatePath('assets/**/*'),
         this.destinationPath(Path.join(destFolder, 'src/assets/'))
       );
+      // 复制git配置文件
+      this.fs.copy(
+        this.templatePath('.gitignore'),
+        this.destinationPath(Path.join(destFolder, '.gitignore'))
+      );
       // 生成package.json文件
       if (!opts.enableSprites) {
         this.fs.delete(this.destinationPath(Path.join(destFolder, 'src/assets/icons')));
