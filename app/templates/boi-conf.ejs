@@ -127,6 +127,11 @@ boi.spec('image', {
   useHash: true
 });
 
+// 本地服务器配置
+boi.serve({
+  port: 8888
+});
+
 // Mock接口配置
 boi.mock({
   'GET /api/test?$uid': {
