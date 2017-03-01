@@ -40,9 +40,4 @@ module.exports = [{
     name: 'BootStrap',
     value: '//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js'
   }]
-},{
-  type: 'confirm',
-  name: 'jsLint',
-  message: 'Enable lint tesing to JavaScript code?',
-  default: true
 }];

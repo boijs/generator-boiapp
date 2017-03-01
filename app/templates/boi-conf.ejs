@@ -32,7 +32,7 @@ boi.spec('js', {
     'LOGIN_API': '/login'
   },
   // 是否开启代码规范测试
-  lint: <%= jsLint %>,
+  lint: false,
   // 否将公共模块提取出来
   splitCommonModule: true,
   // 自行指定入口文件，未指定的文件即使符合命名规范也不会参与编译
@@ -69,7 +69,6 @@ boi.spec('style', {
   // Style文件输出目录，相对于basic.output
   output: 'style',
   useHash: true,
-  lint: false,
   // 是否自动补全hack前缀
   autoprefix: false,
   mainFilePrefix: 'main',
@@ -102,7 +101,6 @@ boi.spec('html', {
   source: './',
   // Html文件编译输出目录，相对于basic.output
   output: './',
-  lint: false,
   // 模板入口文件的前缀，入口文件的命名规则为[mainFilePrefix].*.[ext]
   mainFilePrefix: 'index',
   // 是否编译输出静态资源的map文件
