@@ -32,10 +32,16 @@
             </li>
           </ul>
         </div>
-        <%= appname %> built by <a href="https://boijs.github.io/" target="_blank">boi</a>
+        <div class="actions">
+          <button type="button" name="button" class="action__item" onclick='execModuleA()'>执行同步模块A</button>
+          <button type="button" name="button" class="action__item" onclick='execModuleB()'>加载异步模块B</button>
+          <button type="button" name="button" class="action__item" onclick='testApi(0)'>Mock接口请求成功测试</button>
+          <button type="button" name="button" class="action__item" onclick='testApi(1)'>Mock接口请求失败测试</button>
+        </div>
         <% for (var i=0,len=jsLibs.length;i<len;i++) { %>
-            <script src="<%= jsLibs[i] %>" charset="utf-8"></script>
+        <script src="<%= jsLibs[i] %>" charset="utf-8"></script>
         <% } %>
+
         <script src="/js/main.<%= appname %>.js" charset="utf-8"></script>
     </body>
 </html>

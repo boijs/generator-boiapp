@@ -105,6 +105,11 @@ module.exports = class extends Generators {
         this.destinationPath(Path.join(destFolder, 'src/js/main.' + opts.appname + '.js')),
         opts
       );
+      // 复制js文件
+      this.fs.copy(
+        this.templatePath('js/**.js'),
+        this.destinationPath(Path.join(destFolder, 'src/js/'))
+      );
       // 生成style文件
       this.fs.copyTpl(
         this.templatePath('style/main.app.ejs'),
