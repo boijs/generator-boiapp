@@ -124,7 +124,7 @@ module.exports = class extends Generators {
       );
       // 复制git配置文件
       this.fs.copy(
-        this.templatePath('.gitignore'),
+        this.templatePath('gitignore'),
         this.destinationPath(Path.join(destFolder, '.gitignore'))
       );
       // 生成package.json文件
