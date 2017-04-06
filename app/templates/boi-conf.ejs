@@ -151,22 +151,38 @@ boi.mock({
 // 部署功能配置
 boi.deploy({
   testing: {
-    default: {
-      // cdn字段会影响编译输出的静态资源url
-      cdn: {
-        domain: 'map.test.com',
-        path: '/<%= appname %>'
-      },
-      connect: {},
-    }
+    // cdn字段会影响编译输出的静态资源url
+    cdn: {
+      domain: 'map.test.com',
+      path: '/<%= appname %>'
+    },
+    connect: {
+      type: 'sftp',
+      config: {
+        host: '1.1.1.1',
+        path: '/<%= appname %>',
+        auth: {
+          username: 'admin',
+          password: '123456'
+        }
+      }
+    },
   },
   prod: {
-    default: {
-      cdn: {
-        domain: 'map.sogou.com',
-        path: '/<%= appname %>'
-      },
-      connect: {},
+    cdn: {
+      domain: 'map.sogou.com',
+      path: '/<%= appname %>'
+    },
+    connect: {
+      type: 'sftp',
+      config: {
+        host: '1.1.1.1',
+        path: '/<%= appname %>',
+        auth: {
+          username: 'admin',
+          password: '123456'
+        }
+      }
     }
   }
 });
