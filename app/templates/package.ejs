@@ -1,8 +1,16 @@
 {
   "name": "<%= appname %>",
   "version": "0.0.1",
-  "description": "webapp built by boi",
+  "description": "<%= appname %> built by boi",
   "keywords": [
     "boi"
-  ]
+  ],
+  "scripts": {
+    "build": "boi build:testing",
+    "build:testing": "boi build testing",
+    "build:prod": "boi build prod",
+    "deploy": "boi deploy:testing",
+    "deploy:testing": "boi deploy:testing",
+    "deploy:prod": "boi deploy:prod",
+  }
 }
