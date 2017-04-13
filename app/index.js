@@ -96,31 +96,31 @@ module.exports = class extends Generators {
       // 生成html文件
       this.fs.copyTpl(
         this.templatePath('index.app.ejs'),
-        this.destinationPath(Path.join(destFolder, 'src/index.' + opts.appname + '.html')),
+        this.destinationPath(Path.join(destFolder, 'src','index.' + opts.appname + '.html')),
         opts
       );
       // 生成js文件
       this.fs.copyTpl(
         this.templatePath('js/main.app.ejs'),
-        this.destinationPath(Path.join(destFolder, 'src/js/main.' + opts.appname + '.js')),
+        this.destinationPath(Path.join(destFolder, 'src','js','main.' + opts.appname + '.js')),
         opts
       );
       // 复制js文件
       this.fs.copy(
         this.templatePath('js/**.js'),
-        this.destinationPath(Path.join(destFolder, 'src/js/'))
+        this.destinationPath(Path.join(destFolder, 'src','js'))
       );
       // 生成style文件
       this.fs.copyTpl(
         this.templatePath('style/main.app.ejs'),
-        this.destinationPath(Path.join(destFolder, 'src/style/main.' + opts.appname + '.' +
+        this.destinationPath(Path.join(destFolder, 'src','style','main.' + opts.appname + '.' +
           opts.styleSyntax)),
         opts
       );
       // 复制图片
       this.fs.copy(
         this.templatePath('assets/**/*'),
-        this.destinationPath(Path.join(destFolder, 'src/assets/'))
+        this.destinationPath(Path.join(destFolder, 'src','assets'))
       );
       // 复制git配置文件
       this.fs.copy(
@@ -129,7 +129,7 @@ module.exports = class extends Generators {
       );
       // 生成package.json文件
       if (!opts.enableSprites) {
-        this.fs.delete(this.destinationPath(Path.join(destFolder, 'src/assets/icons')));
+        this.fs.delete(this.destinationPath(Path.join(destFolder, 'src','assets','icons')));
       }
     }
     /**
