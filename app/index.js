@@ -42,13 +42,7 @@ module.exports = class extends Generators {
       }
     });
 
-    prompts = prompts.concat([{
-        type: 'confirm',
-        name: 'compateIE8',
-        message: "Does your application compatibility with IE8?",
-        default: true
-      }])
-      .concat(require('./_prompts/_js.js'))
+    prompts = prompts.concat(require('./_prompts/_js.js'))
       .concat(require('./_prompts/_style.js'))
       .concat(require('./_prompts/_html.js'));
 
