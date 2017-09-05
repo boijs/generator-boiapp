@@ -89,14 +89,14 @@ module.exports = class extends Generators {
       );
       // 生成html文件
       this.fs.copyTpl(
-        this.templatePath('index.app.ejs'),
-        this.destinationPath(Path.join(destFolder, 'src','index.' + opts.appname + '.html')),
+        this.templatePath('index.ejs'),
+        this.destinationPath(Path.join(destFolder, 'src',`index.${this.renderOpts.htmlEngine}`)),
         opts
       );
       // 生成js文件
       this.fs.copyTpl(
         this.templatePath('js/main.app.ejs'),
-        this.destinationPath(Path.join(destFolder, 'src','js','main.' + opts.appname + '.js')),
+        this.destinationPath(Path.join(destFolder, 'src','js',`main.${opts.appname}.js`)),
         opts
       );
       // 复制js文件
@@ -107,8 +107,7 @@ module.exports = class extends Generators {
       // 生成style文件
       this.fs.copyTpl(
         this.templatePath('style/main.app.ejs'),
-        this.destinationPath(Path.join(destFolder, 'src','style','main.' + opts.appname + '.' +
-          opts.styleSyntax)),
+        this.destinationPath(Path.join(destFolder, 'src','style',`main.${opts.appname}.${opts.styleSyntax}`)),
         opts
       );
       // 复制图片

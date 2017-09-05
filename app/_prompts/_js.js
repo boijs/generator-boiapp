@@ -11,19 +11,13 @@ module.exports = [{
     name: 'jQuery',
     value: 'jquery'
   },{
-    name: 'vue.js v1',
-    value: 'vue@1'
-  },{
-    name: 'vue.js v2',
-    value: 'vue@2'
+    name: 'Vue',
+    value: 'vue'
   },{
     name: 'React',
     value: 'react'
   },{
-    name: 'Angular v1',
-    value: 'angular@1'
-  },{
-    name: 'Angular v2',
+    name: 'Angular',
     value: 'angular@2'
   }]
 },{
@@ -33,9 +27,6 @@ module.exports = [{
   choices: [{
     name: 'jQuery 1.10.1',
     value: '//cdn.bootcss.com/jquery/1.10.1/jquery.min.js'
-  },{
-    name: 'jQuery 2.0.1',
-    value: '//cdn.bootcss.com/jquery/2.0.1/jquery.min.js'
   },{
     name: 'BootStrap',
     value: '//cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js'

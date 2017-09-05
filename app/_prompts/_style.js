@@ -13,10 +13,10 @@ module.exports = [{
     name: 'CSS',
     value: 'css'
   },{
-    name: 'Less',
+    name: 'LESS',
     value: 'less'
   },{
-    name: 'Scss',
+    name: 'SCSS',
     value: 'scss'
   }],
   default: 0

@@ -7,7 +7,6 @@
         <% for (var i=0,len=styleLibs.length;i<len;i++) { %>
             <link rel="stylesheet" href="<%= styleLibs[i] %>"></link>
         <% } %>
-        <link rel="stylesheet" href="/style/main.<%= appname %>.css">
     </head>
     <body>
         <div class="<%= appname %>__nav">
@@ -41,7 +40,5 @@
         <% for (var i=0,len=jsLibs.length;i<len;i++) { %>
         <script src="<%= jsLibs[i] %>" charset="utf-8"></script>
         <% } %>
-
-        <script src="/js/main.<%= appname %>.js" charset="utf-8"></script>
     </body>
 </html>

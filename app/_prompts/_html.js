@@ -8,17 +8,11 @@ module.exports = [{
     name: 'Html',
     value: 'html'
   },{
-    name: 'Jade',
-    value: 'jade'
-  },{
-    name: 'Swig',
-    value: 'swig'
-  },{
     name: 'Ejs',
     value: 'ejs'
   },{
-    name: 'Handlebar',
-    value: 'handlebar'
+    name: 'Handlebars',
+    value: 'handlebars'
   }],
   default: 0
 }];
