@@ -11,8 +11,11 @@ module.exports = [{
     name: 'Ejs',
     value: 'ejs'
   },{
-    name: 'Handlebars',
-    value: 'handlebars'
+    name: 'Pug',
+    value: 'pug'
+  },{
+    name: 'Mustache',
+    value: 'mustache'
   }],
   default: 0
 }];

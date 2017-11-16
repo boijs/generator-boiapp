@@ -1,0 +1,30 @@
+// 引入style文件
+import '../style/main.<%= appname %>.<%= styleSyntax%>';
+// 同步模块A
+import {ModuleA} from './part/moduleA.js';
+
+window.execModuleA = () => {
+  ModuleA();
+};
+
+window.execModuleB = () => {
+  // 异步加载moduleB模块
+  require.ensure([],require => {
+    const ModuleB = require('./part/moduleB.js');
+    ModuleB.fn();
+  },'async');
+};
+
+window.testApi = (type) => {
+  const Head = document.head;
+  const Script = document.createElement('script');
+  const Params = type === 0 ? 'uid=123&callback=jsonpSuccessCallback' : 'callback=jsonpSuccessCallback';
+  
+  Script.src = `${API_TEST}?${Params}`;
+  window.jsonpSuccessCallback = res => {
+    alert(res.msg);
+    Head.removeChild(Script);
+    window.jsonpSuccessCallback = null;
+  };
+  Head.appendChild(Script);
+};

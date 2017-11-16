@@ -9,23 +9,17 @@
         <% } %>
     </head>
     <body>
-        <div class="<%= appname %>__nav">
-          <ul class='<%= appname %>__nav__list'>
-            <li class='<%= appname %>__nav__item'>
+        <div class="nav">
+          <ul class='nav__list'>
+            <li class='nav__item'>
               <% if(enableSprites){ %>
-                <i class="<%= appname %>__icon <%= appname %>__icon__home"></i>
+                <i class="icon icon__home"></i>
               <% } %>
               <span class="item__label">首页</span>
             </li>
-            <li class='<%= appname %>__nav__item'>
+            <li class='nav__item'>
               <% if(enableSprites){ %>
-                <i class="<%= appname %>__icon <%= appname %>__icon__docs"></i>
-              <% } %>
-              <span class="item__label">文档</span>
-            </li>
-            <li class='<%= appname %>__nav__item'>
-              <% if(enableSprites){ %>
-                <i class="<%= appname %>__icon <%= appname %>__icon__about"></i>
+                <i class="icon icon__about"></i>
               <% } %>
               <span class="item__label">关于</span>
             </li>

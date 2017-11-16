@@ -1,0 +1,53 @@
+<template>
+<div class="actions">
+  <button type="button" name="button" class="action__item" @click='execModuleA()'>执行同步模块A</button>
+  <button type="button" name="button" class="action__item" @click='execModuleB()'>加载异步模块B</button>
+  <button type="button" name="button" class="action__item" @click='testApi(0)'>Mock接口请求成功测试</button>
+  <button type="button" name="button" class="action__item" @click='testApi(1)'>Mock接口请求失败测试</button>
+</div>
+</template>
+<script>
+// 同步模块A
+import {ModuleA} from './part/moduleA.js';
+export default {
+  methods: {
+    execModuleA(){
+      ModuleA();
+    },
+    execModuleB(){
+      require.ensure([],require => {
+        const ModuleB = require('./part/moduleB.js');
+        ModuleB.fn();
+      },'async');
+    },
+    testApi(type){
+      const Head = document.head;
+      const Script = document.createElement('script');
+      const Params = type === 0 ? 'uid=123&callback=jsonpSuccessCallback' : 'callback=jsonpSuccessCallback';
+      
+      Script.src = `${API_TEST}?${Params}`;
+      window.jsonpSuccessCallback = res => {
+        alert(res.msg);
+        Head.removeChild(Script);
+        window.jsonpSuccessCallback = null;
+      };
+      Head.appendChild(Script);
+    }
+  }
+};
+</script>
+<style lang='<%= styleSyntax %>'>
+.actions {
+  margin: 50px 0;
+  text-align: center;
+}
+
+.action__item {
+  height: 50px;
+  width: 120px;
+  margin: 10px 20px;
+  display: inline-block;
+  vertical-align: middle;
+  border: #ccc solid 1px;
+}
+</style>

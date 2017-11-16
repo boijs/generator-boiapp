@@ -1,10 +1,12 @@
-body{
+body {
   margin: 0;
 }
-.<%= appname %>__nav{
-      background: #e7e7e7;
+
+.nav {
+  background: #e7e7e7;
 }
-.<%= appname %>__nav__list{
+
+.nav__list {
   height: 50px;
   line-height: 50px;
   border-bottom: solid #ddd 1px;
@@ -12,15 +14,17 @@ body{
   padding: 0 10px;
   margin: 0;
 }
-.<%= appname %>__nav__item{
+
+.nav__item {
   display: inline-block;
   font-size: 14px;
   position: relative;
   padding-left: 20px;
   margin-left: 20px;
 }
-<% if(enableSprites){ %>
-  .<%= appname %>__icon{
+
+<% if(enableSprites) {%>
+  .icon {
     display: inline-block;
     vertical-align: middle;
     position: absolute;
@@ -28,24 +32,10 @@ body{
     top: 50%;
     transform: translateY(-50%);
   }
-  .<%= appname %>__icon__home{
+  .icon__home {
     background: url(../assets/icons/icon-home.png) no-repeat;
   }
-  .<%= appname %>__icon__docs{
-    background: url(../assets/icons/icon-docs.png) no-repeat;
-  }
-  .<%= appname %>__icon__about{
+  .icon__about {
     background: url(../assets/icons/icon-about.png) no-repeat;
   }
 <% } %>
-.actions{
-  margin: 50px 0;
-  text-align: center;
-}
-.action__item{
-  height: 50px;
-  width: 120px;
-  margin: 0 20px;
-  display: inline-block;
-  vertical-align: middle;
-}
