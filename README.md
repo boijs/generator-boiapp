@@ -1,6 +1,6 @@
 ## Boi app generator
 ---
-[![license](https://img.shields.io/github/license/boijs/generator-boiapp.svg?style=plastic)](https://github.com/boijs/boi/blob/master/LICENSE)
+[![license](https://img.shields.io/github/license/boijs/boi.svg?style=plastic)](https://github.com/boijs/boi/blob/master/LICENSE)
 [![npm](https://img.shields.io/npm/v/generator-boiapp.svg?style=plastic)](https://www.npmjs.com/package/boi)
 
 创建适用于[boi](https://github.com/boijs/boi)的webapp脚手架，已集成到`boi new`命令行。
